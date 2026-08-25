@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO 2026 // Aryan Saxena | AI Engineer & Full-Stack Architect</title>
+  <meta name="description" content="Portfolio 2026 of Aryan Saxena - AI Engineer, Machine Learning Specialist, and Full-Stack Developer. Grounded in B.Tech CSE, PyTorch, Voice AI, and modern web architectures.">
+  <meta name="keywords" content="Aryan Saxena, Portfolio 2026, AI Engineer, Machine Learning, PyTorch, Full Stack, MONOPOLY Voice AI, React, Node.js, Rudrapur, Uttarakhand">
+  <meta name="author" content="Aryan Saxena">
+
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:title" content="PORTFOLIO 2026 // Aryan Saxena | AI Engineer & Creative Developer">
+  <meta property="og:description" content="Explore Aryan Saxena's 2026 Motion & AI Portfolio featuring PyTorch deep learning models, MONOPOLY Voice & Vision AI, Full-Stack web architectures, and interactive CLI.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cyber Grid Texture Overlay -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Interactive 3D Holographic Geometry Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="gradient-text">Aryan Saxena</span>
+        <span class="logo-year">2026.4</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="active">// HOME</a></li>
+          <li><a href="#about">// ABOUT</a></li>
+          <li><a href="#skills">// SKILLS</a></li>
+          <li><a href="#projects">// PROJECTS</a></li>
+          <li><a href="#terminal">// CLI</a></li>
+          <li><a href="#timeline">// TIMELINE</a></li>
+          <li><a href="#contact">// CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Toggle Theme Mode">
+          <span id="theme-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </span>
+        </button>
+
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Aryan</a>
+
+        <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Open Navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (2026 Motion Stage) -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-meta-bar">
+          <div class="hero-status-pill">
+            <span class="pulse-dot"></span>
+            <span>SYSTEM: OPERATIONAL // AVAILABLE 2026</span>
+          </div>
+          <div class="hero-coord-tag">
+            <span>[ 28.98° N, 79.40° E // RUDRAPUR, IN ]</span>
+          </div>
+          <div class="hero-coord-tag">
+            <span>[ B.TECH CSE @ UTU ]</span>
+          </div>
+        </div>
+
+        <h1 class="hero-main-title">
+          Aryan <span class="gradient-text">Saxena</span>
+        </h1>
+
+        <div class="hero-typing-box">
+          <span class="text-sub mr-2">&gt;&nbsp;</span>
+          <span id="typing-text"></span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <p class="hero-bio">
+          Computer Science undergraduate specializing in <strong>Artificial Intelligence & Machine Learning</strong> with deep practical experience in <strong>Python, PyTorch, Voice/Vision AI, and Full-Stack Web architectures</strong>. Building intelligent, low-latency, and user-centric systems.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#skills" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            Explore Skills Matrix
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            Selected Works
+          </a>
+          <a href="#terminal" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+            CLI Simulator
+          </a>
+        </div>
+
+        <div class="hero-social-bar">
+          <a href="https://github.com/AryanXCode646" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>/AryanXCode646</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-saxena-0213363ab" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>/in/aryan-saxena</span>
+          </a>
+          <a href="mailto:aryansaxena407@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>aryansaxena407@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right 3D HUD Stage Card -->
+      <div class="hero-stage-card hud-panel" data-tilt>
+        <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
+
+        <div class="stage-header">
+          <div class="stage-label">
+            <span class="pulse-dot"></span>
+            <span>SPEC: CREATIVE_AI_ENGINE // 2026</span>
+          </div>
+          <span class="badge badge-cyan">ONLINE</span>
+        </div>
+
+        <div class="stage-avatar-box">
+          <div class="stage-avatar-img">AS</div>
+          <div class="stage-avatar-details">
+            <h4>Aryan Saxena</h4>
+            <p>AI Engineer &amp; Full-Stack Architect</p>
+          </div>
+        </div>
+
+        <div class="stage-metrics-grid">
+          <div class="stage-metric-box">
+            <div class="stage-metric-val">15+</div>
+            <div class="stage-metric-lbl">Engineered Systems</div>
+          </div>
+          <div class="stage-metric-box">
+            <div class="stage-metric-val">&lt;50ms</div>
+            <div class="stage-metric-lbl">Voice Latency Target</div>
+          </div>
+        </div>
+
+        <div class="stage-skills-preview">Core Engineering Core:</div>
+        <div class="stage-tags-flex">
+          <span class="stage-tag-item">Python 3.12</span>
+          <span class="stage-tag-item">PyTorch</span>
+          <span class="stage-tag-item">Voice AI</span>
+          <span class="stage-tag-item">React.js</span>
+          <span class="stage-tag-item">Node.js / MongoDB</span>
+          <span class="stage-tag-item">Linux</span>
+          <span class="stage-tag-item">DSA &amp; DBMS</span>
+          <span class="stage-tag-item">Figma / UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kinetic Marquee Ribbon -->
+  <div class="marquee-ribbon">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>ARTIFICIAL INTELLIGENCE</span> <span class="marquee-separator">✦</span>
+        <span>MACHINE LEARNING</span> <span class="marquee-separator">✦</span>
+        <span>PYTORCH DEEP LEARNING</span> <span class="marquee-separator">✦</span>
+        <span>FULL-STACK MERN ARCHITECTURE</span> <span class="marquee-separator">✦</span>
+        <span>MONOPOLY VOICE &amp; VISION AI</span> <span class="marquee-separator">✦</span>
+        <span>PROMPT ENGINEERING &amp; AGENTS</span> <span class="marquee-separator">✦</span>
+        <span>REACT.JS &amp; TAILWIND CSS</span> <span class="marquee-separator">✦</span>
+        <span>DATA STRUCTURES &amp; ALGORITHMS</span> <span class="marquee-separator">✦</span>
+      </div>
+      <div class="marquee-content">
+        <span>ARTIFICIAL INTELLIGENCE</span> <span class="marquee-separator">✦</span>
+        <span>MACHINE LEARNING</span> <span class="marquee-separator">✦</span>
+        <span>PYTORCH DEEP LEARNING</span> <span class="marquee-separator">✦</span>
+        <span>FULL-STACK MERN ARCHITECTURE</span> <span class="marquee-separator">✦</span>
+        <span>MONOPOLY VOICE &amp; VISION AI</span> <span class="marquee-separator">✦</span>
+        <span>PROMPT ENGINEERING &amp; AGENTS</span> <span class="marquee-separator">✦</span>
+        <span>REACT.JS &amp; TAILWIND CSS</span> <span class="marquee-separator">✦</span>
+        <span>DATA STRUCTURES &amp; ALGORITHMS</span> <span class="marquee-separator">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About & Engineering Metrics Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 00 // PROFILE SPECIFICATION ]</div>
+        <h2 class="section-title">ENGINEERING PHILOSOPHY</h2>
+        <p class="section-subtitle">
+          Driven by a unique blend of analytical problem-solving, deep learning architectures, and modern full-stack implementation to deliver intelligent, scalable, and user-focused applications.
+        </p>
+      </div>
+
+      <div class="stats-grid" id="stats-grid">
+        <!-- Populated dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Matrix Hub Section (Resume Grounded) -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 01 // TECHNICAL MATRIX ]</div>
+        <h2 class="section-title">SKILLS &amp; PROFICIENCIES</h2>
+        <p class="section-subtitle">
+          Interactive catalog of technical competencies across Artificial Intelligence, Full-Stack web development, Core CS, and Design systems.
+        </p>
+      </div>
+
+      <div class="skills-controls">
+        <!-- Live Matrix Search Input -->
+        <div class="skills-search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="skill-search-input" class="skills-search-input" placeholder="Query matrix (e.g. PyTorch, Python, React, MongoDB, Linux)...">
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="skill-category-tabs" id="skill-category-tabs">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Showcase Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 02 // SELECTED WORKS ]</div>
+        <h2 class="section-title">FEATURED SYSTEMS &amp; PROJECTS</h2>
+        <p class="section-subtitle">
+          Production systems, voice AI assistants, deep learning pipelines, and modern web platforms engineered by Aryan Saxena.
+        </p>
+      </div>
+
+      <div class="projects-controls" id="project-filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Systems</button>
+        <button class="filter-btn" data-filter="featured">Flagship</button>
+        <button class="filter-btn" data-filter="ai-ml">AI &amp; Voice</button>
+        <button class="filter-btn" data-filter="web-dev">Full-Stack Web</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal CLI Section -->
+  <section id="terminal" class="terminal-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 03 // DEVELOPER CLI SIMULATOR ]</div>
+        <h2 class="section-title">INTERACTIVE TERMINAL (ARYAN_OS)</h2>
+        <p class="section-subtitle">
+          Execute terminal commands directly in the virtual shell below to inspect skills, academic credentials, and project architectures.
+        </p>
+      </div>
+
+      <div class="terminal-wrapper" id="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-dots">
+            <span class="term-dot term-dot-red"></span>
+            <span class="term-dot term-dot-yellow"></span>
+            <span class="term-dot term-dot-green"></span>
+          </div>
+          <div class="terminal-title">aryan@motion-lab: ~ (bash / zsh 2026.4)</div>
+          <div class="terminal-badge">LIVE REPL</div>
+        </div>
+
+        <div class="terminal-body" id="terminal-output">
+          <!-- Terminal logs injected here -->
+        </div>
+
+        <div class="term-input-container">
+          <span class="term-prompt">aryan@motion-lab:~$</span>
+          <input type="text" id="terminal-input" class="term-input-field" placeholder="Type a command (e.g. 'help', 'education', 'skills', 'projects', 'sudo hire')..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+
+      <div class="terminal-quick-chips">
+        <span class="chip-label">Quick Commands:</span>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('help')">help</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('whoami')">whoami</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('education')">education</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('skills --ai')">skills --ai</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('project monopoly')">project monopoly</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('contact')">contact</button>
+        <button class="term-chip" onclick="window.terminalInstance.runCommand('sudo hire')">sudo hire</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Experience Timeline Section -->
+  <section id="timeline" class="timeline-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 04 // ACADEMIC &amp; MILESTONE LOG ]</div>
+        <h2 class="section-title">EDUCATION &amp; JOURNEY</h2>
+        <p class="section-subtitle">
+          Academic foundations at Dr. A.P.J. Abdul Kalam Institute of Technology (UTU), deep learning achievements, and software engineering experience.
+        </p>
+      </div>
+
+      <!-- Education Subsection -->
+      <h3 class="mono-tag text-cyan mb-4 text-center">🎓 ACADEMIC BACKGROUND</h3>
+      <div class="timeline-container mb-5" id="education-timeline">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Experience Subsection -->
+      <h3 class="mono-tag text-cyan mb-4 text-center mt-5">💼 TECHNICAL MILESTONES</h3>
+      <div class="timeline-container" id="experience-timeline">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Booking Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 05 // CONNECT &amp; COLLABORATE ]</div>
+        <h2 class="section-title">LET'S BUILD SOMETHING EXTRAORDINARY</h2>
+        <p class="section-subtitle">
+          Open for full-time engineering roles, AI research collaborations, and innovative product developments.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card hud-panel" data-tilt>
+          <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
+          <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
+
+          <div>
+            <h3>COMMUNICATION CHANNELS</h3>
+            <p>
+              Feel free to reach out directly via email, phone, LinkedIn, or send a message using the interactive form.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Direct Email</div>
+                  <div class="contact-val">aryansaxena407@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Direct Phone / WhatsApp</div>
+                  <div class="contact-val">+91 9219191966</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Location Base</div>
+                  <div class="contact-val">Rudrapur (U.S. Nagar), Uttarakhand, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-actions-footer d-flex flex-column gap-2 mt-4">
+            <button id="copy-email-btn" class="btn btn-outline w-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              Copy Email Address
+            </button>
+            <button id="copy-phone-btn" class="btn btn-outline w-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Copy Phone (+91 9219191966)
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card hud-panel">
+          <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
+          <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">// YOUR NAME</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe / Tech Recruiter" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">// YOUR EMAIL ADDRESS</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="e.g. recruiter@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">// MESSAGE / PROJECT BRIEF</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Describe your project, role, or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Dispatch Direct Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        PORTFOLIO 2026 // <strong>ARYAN SAXENA</strong>. B.TECH CSE • AI ENGINEER.
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Return to Top ↑</a>
+        <a href="https://github.com/AryanXCode646" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/aryan-saxena-0213363ab" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog for Project Deep Dive -->
+  <div id="project-modal" class="modal-overlay" onclick="if(event.target === this) closeProjectModal()">
+    <div class="modal-box hud-panel">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">✕</button>
+      <div id="modal-content-area">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
