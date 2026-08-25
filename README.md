@@ -1,77 +1,75 @@
-# Aryan Saxena - Portfolio Website
+# PORTFOLIO 2026 // ARYAN SAXENA
+### AI Engineer & Creative Full-Stack Architect
 
-A modern, high-performance, interactive portfolio website showcasing skills in **Artificial Intelligence, Voice Systems, LLM Agentic Workflows, and Full-Stack Web Development**.
+[![Live Website](https://img.shields.io/badge/Live_Site-Visit_Portfolio-00f0ff?style=for-the-badge&logo=google-chrome&logoColor=black)](https://aryanxcode646.github.io/portfolio-2026/)
+[![GitHub](https://img.shields.io/badge/GitHub-AryanXCode646-a855f7?style=for-the-badge&logo=github)](https://github.com/AryanXCode646)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aryan-saxena-0213363ab)
 
 ---
 
-## 🌟 Key Features
+## 🌐 Live Website URL
+👉 **[https://aryanxcode646.github.io/portfolio-2026/](https://aryanxcode646.github.io/portfolio-2026/)**
 
-- **Midnight Glassmorphism Design**: Futuristic cyberpunk / dark theme with glowing neon cyan/violet accents and a light/dark theme switch.
-- **Interactive Background Constellation**: Custom HTML5 Canvas particle engine that subtly reacts to mouse movements and adjusts with theme changes.
-- **Dynamic Skills Hub**:
-  - Categorized tabs (*AI & Machine Learning*, *Full-Stack & Web*, *Backend & Systems*, *DevOps & Tools*).
-  - Real-time search filter query (type any technology to filter instantly).
-  - Animated proficiency meters and experience counters.
-- **Project Deep Dives**: Detailed showcases for projects like **MONOPOLY Windows Voice & Vision AI Assistant**, **NeuroFlow Agent Engine**, and **Nexus AI Dashboard** with modals and tech stacks.
-- **Embedded Developer Terminal**: Interactive CLI allowing recruiters and developers to test commands (`help`, `skills --ai`, `project monopoly`, `whoami`, `sudo hire`).
-- **Interactive Contact Form**: Direct email client integration and 1-click clipboard copy for email.
-- **Zero-Dependency & Lightning Fast**: Pure modern ES6+ JavaScript, CSS3, and HTML5 with instant load times.
+---
+
+## 🌟 Overview & Features
+
+A high-performance **2026 Motion & Creative AI Portfolio** engineered with modern web standards, brutalist HUD glassmorphism aesthetics, and real-time interactive systems:
+
+- **Interactive 3D Holographic Geometry Canvas**: Rotating 3D wireframe mesh & neural particle matrix reacting to mouse cursor and scroll depth.
+- **Custom Magnetic Cursor Follower**: Smooth interactive cursor with hover state scaling.
+- **Kinetic Infinite Marquee Ribbon**: Dynamic continuous scrolling ticker for technical specializations.
+- **Interactive Skills Matrix**: Real-time live query search and category filtering across AI/ML, Full-Stack, Core CS, and Design.
+- **Featured Systems Showcase**:
+  - `01 / MONOPOLY AI` — Screen-Aware Windows Voice & Vision Assistant
+  - `02 / Predictive Deep Learning Pipeline` — PyTorch Neural Networks & ML
+  - `03 / Nexus Full-Stack Platform` — React, Node.js & MongoDB
+  - `04 / NeuroFlow Agentic RAG` — Multi-Agent LLM Reasoning Framework
+- **Interactive Terminal CLI (`AryanOS v2.6`)**: Live virtual terminal supporting `help`, `whoami`, `education`, `skills`, `projects`, `contact`, `github`, and `sudo hire`.
+- **Integrated Contact Hub**: Direct copy buttons for email (`aryansaxena407@gmail.com`) and phone (`+91 9219191966`).
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── index.html                   # Main semantic entry point
+├── .nojekyll                    # Direct asset serving on GitHub Pages
+├── .github/
+│   └── workflows/
+│       └── deploy.yml           # Automated GitHub Pages CI/CD workflow
+├── css/
+│   └── style.css                # 2026 Motion Designer & HUD Glassmorphism styles
+├── js/
+│   ├── data.js                  # Structured resume database
+│   ├── particles.js             # 3D Hologram & Particle Canvas Engine
+│   ├── terminal.js              # AryanOS Interactive Virtual Terminal CLI
+│   └── main.js                  # 3D Card Tilt, Magnetic Cursor, & Modals
+└── README.md                    # Project documentation
+```
 
 ---
 
 ## 🚀 How to Run Locally
 
-You can run this portfolio locally using any standard static server or simply opening `index.html` in your browser.
-
-### Option 1: Using Python (Recommended)
 ```powershell
-cd portfolio
+# 1. Clone repository
+git clone https://github.com/AryanXCode646/portfolio-2026.git
+
+# 2. Navigate to directory
+cd portfolio-2026
+
+# 3. Start local web server
 python -m http.server 3000
 ```
 Then open `http://localhost:3000` in your web browser.
 
-### Option 2: Using Node.js / `npx serve`
-```powershell
-npx serve portfolio
-```
-
-### Option 3: Direct Browser
-Double-click `portfolio/index.html` in Windows File Explorer.
-
 ---
 
-## 📁 Project Structure
-
-```text
-portfolio/
-├── index.html          # Main HTML structure with semantic sections
-├── css/
-│   └── style.css       # Glassmorphism, animations, dark/light themes, responsive layout
-├── js/
-│   ├── data.js         # Structured data for skills, projects, bio, and timeline
-│   ├── particles.js    # Interactive canvas particle/constellation engine
-│   ├── terminal.js     # Embedded interactive CLI simulator
-│   └── main.js         # Theme toggle, search filtering, modals, and toasts
-└── README.md           # Documentation
-```
-
----
-
-## 🛠️ How to Customize Your Info
-
-All data (skills, projects, bio, stats, and links) is neatly organized inside [`js/data.js`](js/data.js):
-
-1. **Update Bio & Links**: Edit `portfolioData.personal` in `js/data.js` to update your email, GitHub, LinkedIn, or personal bio.
-2. **Add/Edit Skills**: Add new skill objects to `portfolioData.skills` with custom tags, levels, and descriptions.
-3. **Add New Projects**: Add new project entries to `portfolioData.projects` with your project highlights, badges, and repo URLs.
-
----
-
-## 🌐 Free Deployment Options
-
-### Deploy to GitHub Pages:
-1. Push this folder to a GitHub repository.
-2. In the repository settings, go to **Pages** > select branch **main** / root folder (or `portfolio/`) > click **Save**.
-
-### Deploy to Vercel or Netlify:
-1. Drag and drop the `portfolio` folder to [Vercel](https://vercel.com) or [Netlify](https://netlify.com) for instant global CDN deployment with HTTPS.
+## 👤 Author
+**Aryan Saxena**
+- **Degree**: B.Tech in Computer Science & Engineering (2023 - 2027)
+- **Institution**: Dr. A.P.J. Abdul Kalam Institute of Technology, Veer Madho Singh Bhandari UTU
+- **Email**: [aryansaxena407@gmail.com](mailto:aryansaxena407@gmail.com)
+- **Phone**: +91 9219191966
+- **Location**: Rudrapur (U.S. Nagar), Uttarakhand, India
