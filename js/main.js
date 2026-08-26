@@ -1,6 +1,6 @@
 /**
  * 2026 Motion Designer Portfolio - Main Interactive Controller
- * Enhanced with Security Guard, Anti-Scraping Obfuscation, Honeypot Spam Trap & Strict Sanitization.
+ * Enhanced with Multi-Tab Project Modals, Code Inspector, Audio FX, and Security Guards.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,7 +48,7 @@ function initCustomCursor() {
   }
   renderCursor();
 
-  const hoverables = 'a, button, input, textarea, .skill-card, .project-card, .term-chip, .hud-panel';
+  const hoverables = 'a, button, input, textarea, .skill-card, .project-card, .term-chip, .hud-panel, .ai-companion-trigger';
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverables)) {
       document.body.classList.add('hovering');
@@ -88,6 +88,9 @@ window.toggleTheme = function() {
 
   if (window.particleEngine) {
     window.particleEngine.setTheme(newTheme);
+  }
+  if (window.soundFX) {
+    window.soundFX.playChime(600, 900);
   }
   showToast(`Switched theme mode to: ${newTheme.toUpperCase()}`);
   return newTheme;
@@ -339,6 +342,9 @@ function renderProjects() {
   init3DCardTilt();
 }
 
+/* --------------------------------------------------
+   Multi-Tab Interactive Project Modal
+-------------------------------------------------- */
 window.openProjectModal = function(id) {
   const p = portfolioData.projects.find(x => x.id === id);
   if (!p) return;
@@ -346,6 +352,8 @@ window.openProjectModal = function(id) {
   const modal = document.getElementById('project-modal');
   const modalBody = document.getElementById('modal-content-area');
   if (!modal || !modalBody) return;
+
+  if (window.soundFX) window.soundFX.playModalOpen();
 
   modalBody.innerHTML = `
     <div class="modal-project-content">
@@ -358,22 +366,64 @@ window.openProjectModal = function(id) {
         </div>
       </div>
 
-      <div class="modal-section mt-4">
-        <h4 class="mono-tag text-cyan">SYSTEM OVERVIEW</h4>
-        <p class="text-sub">${escapeHtml(p.description)}</p>
+      <!-- Multi-Tab Switcher -->
+      <div class="modal-tabs-nav mt-4">
+        <button class="modal-tab-btn active" onclick="switchModalTab(this, 'tab-overview')">01 // Overview</button>
+        <button class="modal-tab-btn" onclick="switchModalTab(this, 'tab-arch')">02 // Architecture</button>
+        <button class="modal-tab-btn" onclick="switchModalTab(this, 'tab-code')">03 // Source Code</button>
+        <button class="modal-tab-btn" onclick="switchModalTab(this, 'tab-metrics')">04 // Telemetry</button>
       </div>
 
-      <div class="modal-section mt-4">
-        <h4 class="mono-tag text-cyan">ARCHITECTURAL HIGHLIGHTS & CAPABILITIES</h4>
-        <ul class="modal-list mt-2">
-          ${p.highlights.map(h => `<li><span class="text-cyan">✔</span> ${escapeHtml(h)}</li>`).join('')}
-        </ul>
+      <!-- Tab 1: Overview -->
+      <div id="tab-overview" class="modal-tab-pane active">
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">SYSTEM OVERVIEW</h4>
+          <p class="text-sub">${escapeHtml(p.description)}</p>
+        </div>
+
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">KEY CAPABILITIES &amp; HIGHLIGHTS</h4>
+          <ul class="modal-list mt-2">
+            ${p.highlights.map(h => `<li><span class="text-cyan">✔</span> ${escapeHtml(h)}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">TECHNOLOGY STACK</h4>
+          <div class="project-tech-stack mt-2">
+            ${p.tech.map(t => `<span class="tech-pill">${escapeHtml(t)}</span>`).join('')}
+          </div>
+        </div>
       </div>
 
-      <div class="modal-section mt-4">
-        <h4 class="mono-tag text-cyan">TECHNOLOGY STACK</h4>
-        <div class="project-tech-stack mt-2">
-          ${p.tech.map(t => `<span class="tech-pill">${escapeHtml(t)}</span>`).join('')}
+      <!-- Tab 2: Architecture -->
+      <div id="tab-arch" class="modal-tab-pane">
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">SYSTEM PIPELINE &amp; DATAFLOW</h4>
+          <pre class="code-preview-block"><code>${escapeHtml(p.architecture || 'Architecture Diagram Loaded in Memory')}</code></pre>
+        </div>
+      </div>
+
+      <!-- Tab 3: Source Code Snippet -->
+      <div id="tab-code" class="modal-tab-pane">
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">CORE IMPLEMENTATION SNIPPET</h4>
+          <pre class="code-preview-block"><code>${escapeHtml(p.codeSnippet || '# Production Code Maintained on GitHub')}</code></pre>
+        </div>
+      </div>
+
+      <!-- Tab 4: Metrics -->
+      <div id="tab-metrics" class="modal-tab-pane">
+        <div class="modal-section mt-3">
+          <h4 class="mono-tag text-cyan">BENCHMARKS &amp; TELEMETRY</h4>
+          <div class="telemetry-grid mt-2">
+            ${p.metrics ? Object.entries(p.metrics).map(([k, v]) => `
+              <div class="telemetry-card">
+                <span class="telemetry-key">${escapeHtml(k.toUpperCase())}</span>
+                <span class="telemetry-val">${escapeHtml(v)}</span>
+              </div>
+            `).join('') : '<p class="text-sub">Telemetry Metrics Online</p>'}
+          </div>
         </div>
       </div>
 
@@ -389,6 +439,20 @@ window.openProjectModal = function(id) {
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+};
+
+window.switchModalTab = function(btn, targetPaneId) {
+  const container = btn.closest('.modal-project-content');
+  if (!container) return;
+
+  container.querySelectorAll('.modal-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  container.querySelectorAll('.modal-tab-pane').forEach(p => p.classList.remove('active'));
+  const target = container.querySelector('#' + targetPaneId);
+  if (target) target.classList.add('active');
+
+  if (window.soundFX) window.soundFX.playClick();
 };
 
 window.closeProjectModal = function() {
@@ -527,7 +591,6 @@ function initSecureContactBindings() {
   const emailVal = SecurityShield.getEmail();
   const phoneVal = SecurityShield.getPhone();
 
-  // Bind dynamic email & phone text
   const emailTargets = document.querySelectorAll('.secure-email-target');
   emailTargets.forEach(el => {
     el.textContent = emailVal;
@@ -553,7 +616,6 @@ function initContactForm() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // 1. Honeypot check: If the hidden bot field is filled, silently ignore
       const honeypot = document.getElementById('form-honeypot');
       if (honeypot && honeypot.value.trim() !== '') {
         console.warn('Bot submission trapped by honeypot.');
@@ -562,7 +624,6 @@ function initContactForm() {
         return;
       }
 
-      // 2. Rate limiting check (cooldown: 5 seconds)
       const now = Date.now();
       if (now - lastSubmitTime < 5000) {
         showToast('Please wait a moment before sending another message.', 'error');
@@ -570,7 +631,6 @@ function initContactForm() {
       }
       lastSubmitTime = now;
 
-      // 3. Extract inputs
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
