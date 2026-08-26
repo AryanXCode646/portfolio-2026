@@ -521,6 +521,13 @@ executor = AgentExecutor(agent=agent, tools=tools, verbose=True)`,
   ]
 };
 
+// Deep freeze to eliminate Prototype Pollution & runtime tampering
+if (typeof SecurityGuard !== "undefined" && SecurityGuard.deepFreeze) {
+  SecurityGuard.deepFreeze(portfolioData);
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { portfolioData, SecurityShield };
 }
+
+
