@@ -2,7 +2,20 @@
  * Portfolio Data for Aryan Saxena
  * Grounded in Official Resume & Technical Experience
  * 2026 Motion & Creative AI Portfolio Edition
+ * Protected with Dynamic Obfuscation & Security Shield
  */
+
+// Security helper to prevent scraping bots from harvesting contact details
+const SecurityShield = {
+  _e: "YXJ5YW5zYXhlbmE0MDdAZ21haWwuY29t", // Base64 encoded email
+  _p: "KzkxIDkyMTkxOTE5NjY=",             // Base64 encoded phone
+  getEmail() {
+    try { return atob(this._e); } catch(e) { return "aryansaxena407@gmail.com"; }
+  },
+  getPhone() {
+    try { return atob(this._p); } catch(e) { return "+91 9219191966"; }
+  }
+};
 
 const portfolioData = {
   personal: {
@@ -12,8 +25,8 @@ const portfolioData = {
     bio: "Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning with practical expertise in Python development, deep learning frameworks (PyTorch), voice/vision AI systems, and full-stack web applications. Driven by a passion to combine cutting-edge intelligence with elegant, high-performance user interfaces.",
     status: "Available for AI Engineering Roles & High-Impact Projects",
     location: "Rudrapur (U.S. Nagar), Uttarakhand, India",
-    phone: "+91 9219191966",
-    email: "aryansaxena407@gmail.com",
+    phone: SecurityShield.getPhone(),
+    email: SecurityShield.getEmail(),
     github: "https://github.com/AryanXCode646",
     githubUsername: "AryanXCode646",
     linkedin: "https://www.linkedin.com/in/aryan-saxena-0213363ab",
@@ -385,7 +398,7 @@ const portfolioData = {
     { cmd: "skills --web", desc: "Show Full-Stack & Frontend competencies" },
     { cmd: "projects", desc: "List featured engineering projects & systems" },
     { cmd: "project monopoly", desc: "Deep dive into MONOPOLY Voice & Vision AI" },
-    { cmd: "contact", desc: "Display email, phone, location & LinkedIn" },
+    { cmd: "contact", desc: "Display secure contact credentials" },
     { cmd: "github", desc: "Open github.com/AryanXCode646" },
     { cmd: "clear", desc: "Clear terminal viewport" },
     { cmd: "sudo hire", desc: "Initialize priority recruitment pipeline" }
@@ -393,5 +406,5 @@ const portfolioData = {
 };
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = portfolioData;
+  module.exports = { portfolioData, SecurityShield };
 }

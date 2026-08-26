@@ -1,7 +1,52 @@
+# Environment & Secrets (High Priority)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.pfx
+*.token
+*secret*
+*credential*
+*.keystore
+
+# Operating System & Cache
 .DS_Store
 Thumbs.db
+desktop.ini
+*.bak
+*.tmp
+*.temp
+
+# Node & Package Managers
 node_modules/
 dist/
-*.log
-.env
-.env.local
+build/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python & Data Stores
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite
+*.sqlite3
+*.db
+memory.json
+reminders.json
+.venv/
+env/
+venv/
+
+# IDE & Editor Configs
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo

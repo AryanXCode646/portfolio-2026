@@ -1,6 +1,6 @@
 /**
  * 2026 Motion Designer Portfolio - Main Interactive Controller
- * Handles 3D Tilt, Magnetic Custom Cursor, Category Filtering, Modals, and Toasts.
+ * Enhanced with Security Guard, Anti-Scraping Obfuscation, Honeypot Spam Trap & Strict Sanitization.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollAnimations();
   init3DCardTilt();
+  initSecureContactBindings();
 });
 
 /* --------------------------------------------------
@@ -47,7 +48,6 @@ function initCustomCursor() {
   }
   renderCursor();
 
-  // Hover detection on interactive elements
   const hoverables = 'a, button, input, textarea, .skill-card, .project-card, .term-chip, .hud-panel';
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverables)) {
@@ -162,8 +162,8 @@ function initStats() {
     <div class="stat-card hud-panel reveal-on-scroll">
       <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
       <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
-      <div class="stat-value gradient-text">${stat.value}</div>
-      <div class="stat-label">${stat.label}</div>
+      <div class="stat-value gradient-text">${escapeHtml(stat.value)}</div>
+      <div class="stat-label">${escapeHtml(stat.label)}</div>
     </div>
   `).join('');
 }
@@ -192,8 +192,8 @@ function renderSkillCategoryTabs() {
   if (!container) return;
 
   container.innerHTML = portfolioData.skillCategories.map(cat => `
-    <button class="skill-tab-btn ${cat.id === currentSkillCategory ? 'active' : ''}" data-cat="${cat.id}">
-      <span>${cat.name}</span>
+    <button class="skill-tab-btn ${cat.id === currentSkillCategory ? 'active' : ''}" data-cat="${escapeHtml(cat.id)}">
+      <span>${escapeHtml(cat.name)}</span>
     </button>
   `).join('');
 
@@ -243,8 +243,8 @@ function renderSkills() {
       <div class="skill-top">
         <div class="skill-icon-badge">${skill.icon}</div>
         <div class="skill-info">
-          <h4 class="skill-name">${skill.name}</h4>
-          <span class="skill-exp">${skill.experience}</span>
+          <h4 class="skill-name">${escapeHtml(skill.name)}</h4>
+          <span class="skill-exp">${escapeHtml(skill.experience)}</span>
         </div>
         <span class="skill-percentage">${skill.level}%</span>
       </div>
@@ -253,10 +253,10 @@ function renderSkills() {
         <div class="skill-progress-fill" style="width: ${skill.level}%;"></div>
       </div>
 
-      <p class="skill-desc">${skill.description}</p>
+      <p class="skill-desc">${escapeHtml(skill.description)}</p>
 
       <div class="skill-tags">
-        ${skill.tags.map(tag => `<span class="tag-pill">${tag}</span>`).join('')}
+        ${skill.tags.map(tag => `<span class="tag-pill">${escapeHtml(tag)}</span>`).join('')}
       </div>
     </div>
   `).join('');
@@ -298,37 +298,37 @@ function renderProjects() {
       <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
 
       <div class="project-meta-top">
-        <span class="project-num">${p.num}</span>
-        <span class="badge ${p.featured ? 'badge-cyan' : 'badge-violet'}">${p.badge}</span>
+        <span class="project-num">${escapeHtml(p.num)}</span>
+        <span class="badge ${p.featured ? 'badge-cyan' : 'badge-violet'}">${escapeHtml(p.badge)}</span>
       </div>
 
       <div class="project-header">
         <span class="project-icon">${p.icon}</span>
         <div>
-          <h3 class="project-title">${p.title}</h3>
-          <p class="project-tagline">${p.tagline}</p>
+          <h3 class="project-title">${escapeHtml(p.title)}</h3>
+          <p class="project-tagline">${escapeHtml(p.tagline)}</p>
         </div>
       </div>
 
-      <p class="project-desc">${p.description}</p>
+      <p class="project-desc">${escapeHtml(p.description)}</p>
 
       <div class="project-highlights">
         <h5>Key Capabilities:</h5>
         <ul>
-          ${p.highlights.slice(0, 3).map(h => `<li><span class="check-icon">✓</span> ${h}</li>`).join('')}
+          ${p.highlights.slice(0, 3).map(h => `<li><span class="check-icon">✓</span> ${escapeHtml(h)}</li>`).join('')}
         </ul>
       </div>
 
       <div class="project-tech-stack">
-        ${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+        ${p.tech.map(t => `<span class="tech-pill">${escapeHtml(t)}</span>`).join('')}
       </div>
 
       <div class="project-actions">
-        <button class="btn btn-sm btn-primary" onclick="openProjectModal('${p.id}')">
+        <button class="btn btn-sm btn-primary" onclick="openProjectModal('${escapeHtml(p.id)}')">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-          Deep Dive [0${p.num}]
+          Deep Dive [0${escapeHtml(p.num)}]
         </button>
-        <a href="${p.github}" target="_blank" class="btn btn-sm btn-outline">
+        <a href="${escapeHtml(p.github)}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
           Repository
         </a>
@@ -352,33 +352,33 @@ window.openProjectModal = function(id) {
       <div class="modal-header-section d-flex align-items-center gap-3">
         <div class="modal-icon-badge fs-2">${p.icon}</div>
         <div>
-          <span class="mono-tag text-cyan">[ SYSTEM SPEC 0${p.num} // ${p.year} ]</span>
-          <h2 class="text-uppercase mb-1">${p.title}</h2>
-          <p class="modal-tagline mono-tag text-muted">${p.tagline}</p>
+          <span class="mono-tag text-cyan">[ SYSTEM SPEC 0${escapeHtml(p.num)} // ${escapeHtml(p.year)} ]</span>
+          <h2 class="text-uppercase mb-1">${escapeHtml(p.title)}</h2>
+          <p class="modal-tagline mono-tag text-muted">${escapeHtml(p.tagline)}</p>
         </div>
       </div>
 
       <div class="modal-section mt-4">
         <h4 class="mono-tag text-cyan">SYSTEM OVERVIEW</h4>
-        <p class="text-sub">${p.description}</p>
+        <p class="text-sub">${escapeHtml(p.description)}</p>
       </div>
 
       <div class="modal-section mt-4">
         <h4 class="mono-tag text-cyan">ARCHITECTURAL HIGHLIGHTS & CAPABILITIES</h4>
         <ul class="modal-list mt-2">
-          ${p.highlights.map(h => `<li><span class="text-cyan">✔</span> ${h}</li>`).join('')}
+          ${p.highlights.map(h => `<li><span class="text-cyan">✔</span> ${escapeHtml(h)}</li>`).join('')}
         </ul>
       </div>
 
       <div class="modal-section mt-4">
         <h4 class="mono-tag text-cyan">TECHNOLOGY STACK</h4>
         <div class="project-tech-stack mt-2">
-          ${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+          ${p.tech.map(t => `<span class="tech-pill">${escapeHtml(t)}</span>`).join('')}
         </div>
       </div>
 
       <div class="modal-actions mt-4 d-flex gap-3">
-        <a href="${p.github}" target="_blank" class="btn btn-primary">
+        <a href="${escapeHtml(p.github)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
           View Source on GitHub
         </a>
@@ -400,7 +400,7 @@ window.closeProjectModal = function() {
 };
 
 /* --------------------------------------------------
-   Education & Experience Timeline (Resume Grounded)
+   Education & Experience Timeline
 -------------------------------------------------- */
 function initEducationAndExperience() {
   const eduContainer = document.getElementById('education-timeline');
@@ -413,14 +413,14 @@ function initEducationAndExperience() {
           <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
           <div class="timeline-header">
             <div>
-              <h4 class="timeline-role">${ed.degree}</h4>
-              <h5 class="timeline-org">${ed.institution}</h5>
-              <div class="mono-tag text-dim">${ed.university}</div>
+              <h4 class="timeline-role">${escapeHtml(ed.degree)}</h4>
+              <h5 class="timeline-org">${escapeHtml(ed.institution)}</h5>
+              <div class="mono-tag text-dim">${escapeHtml(ed.university)}</div>
             </div>
-            <span class="timeline-period">${ed.period}</span>
+            <span class="timeline-period">${escapeHtml(ed.period)}</span>
           </div>
-          <p class="timeline-desc">${ed.details}</p>
-          <span class="badge badge-lime">${ed.status}</span>
+          <p class="timeline-desc">${escapeHtml(ed.details)}</p>
+          <span class="badge badge-lime">${escapeHtml(ed.status)}</span>
         </div>
       </div>
     `).join('');
@@ -436,14 +436,14 @@ function initEducationAndExperience() {
           <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
           <div class="timeline-header">
             <div>
-              <h4 class="timeline-role">${exp.role}</h4>
-              <h5 class="timeline-org">${exp.organization}</h5>
+              <h4 class="timeline-role">${escapeHtml(exp.role)}</h4>
+              <h5 class="timeline-org">${escapeHtml(exp.organization)}</h5>
             </div>
-            <span class="timeline-period">${exp.period}</span>
+            <span class="timeline-period">${escapeHtml(exp.period)}</span>
           </div>
-          <p class="timeline-desc">${exp.description}</p>
+          <p class="timeline-desc">${escapeHtml(exp.description)}</p>
           <ul class="timeline-points">
-            ${exp.points.map(pt => `<li>${pt}</li>`).join('')}
+            ${exp.points.map(pt => `<li>${escapeHtml(pt)}</li>`).join('')}
           </ul>
         </div>
       </div>
@@ -521,14 +521,56 @@ function initNavigation() {
 }
 
 /* --------------------------------------------------
-   Contact Form & Copy Helpers
+   Secure Contact Binding & Obfuscation
 -------------------------------------------------- */
+function initSecureContactBindings() {
+  const emailVal = SecurityShield.getEmail();
+  const phoneVal = SecurityShield.getPhone();
+
+  // Bind dynamic email & phone text
+  const emailTargets = document.querySelectorAll('.secure-email-target');
+  emailTargets.forEach(el => {
+    el.textContent = emailVal;
+    if (el.tagName === 'A') {
+      el.setAttribute('href', `mailto:${emailVal}`);
+    }
+  });
+
+  const phoneTargets = document.querySelectorAll('.secure-phone-target');
+  phoneTargets.forEach(el => {
+    el.textContent = phoneVal;
+  });
+}
+
+/* --------------------------------------------------
+   Contact Form & Anti-Spam Honeypot Protection
+-------------------------------------------------- */
+let lastSubmitTime = 0;
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      // 1. Honeypot check: If the hidden bot field is filled, silently ignore
+      const honeypot = document.getElementById('form-honeypot');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Bot submission trapped by honeypot.');
+        showToast('Message received.', 'info');
+        form.reset();
+        return;
+      }
+
+      // 2. Rate limiting check (cooldown: 5 seconds)
+      const now = Date.now();
+      if (now - lastSubmitTime < 5000) {
+        showToast('Please wait a moment before sending another message.', 'error');
+        return;
+      }
+      lastSubmitTime = now;
+
+      // 3. Extract inputs
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
@@ -538,11 +580,12 @@ function initContactForm() {
         return;
       }
 
-      const subject = encodeURIComponent(`Portfolio Commission / Role Inquiry: ${name}`);
+      const emailAddress = SecurityShield.getEmail();
+      const subject = encodeURIComponent(`Portfolio Commission / Inquiry: ${name}`);
       const body = encodeURIComponent(`Hi Aryan,\n\n${message}\n\nFrom: ${name} (${email})`);
-      window.open(`mailto:${portfolioData.personal.email}?subject=${subject}&body=${body}`, '_blank');
+      window.open(`mailto:${emailAddress}?subject=${subject}&body=${body}`, '_blank');
 
-      showToast('Opening default email client...', 'success');
+      showToast('Opening secure email client...', 'success');
       form.reset();
     });
   }
@@ -550,8 +593,8 @@ function initContactForm() {
   const copyEmailBtn = document.getElementById('copy-email-btn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(portfolioData.personal.email).then(() => {
-        showToast('Email (aryansaxena407@gmail.com) copied!', 'success');
+      navigator.clipboard.writeText(SecurityShield.getEmail()).then(() => {
+        showToast('Email address copied securely!', 'success');
       });
     });
   }
@@ -559,8 +602,8 @@ function initContactForm() {
   const copyPhoneBtn = document.getElementById('copy-phone-btn');
   if (copyPhoneBtn) {
     copyPhoneBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(portfolioData.personal.phone).then(() => {
-        showToast('Phone (+91 9219191966) copied!', 'success');
+      navigator.clipboard.writeText(SecurityShield.getPhone()).then(() => {
+        showToast('Phone number copied securely!', 'success');
       });
     });
   }
@@ -584,7 +627,7 @@ function initScrollAnimations() {
 }
 
 /* --------------------------------------------------
-   Toast Notification System
+   Toast Notification System (XSS-Safe)
 -------------------------------------------------- */
 function showToast(message, type = 'info') {
   let toastContainer = document.getElementById('toast-container');
@@ -597,11 +640,15 @@ function showToast(message, type = 'info') {
 
   const toast = document.createElement('div');
   toast.className = `toast-message toast-${type}`;
-  toast.innerHTML = `
-    <span class="toast-dot"></span>
-    <span>${message}</span>
-  `;
 
+  const dot = document.createElement('span');
+  dot.className = 'toast-dot';
+
+  const textNode = document.createElement('span');
+  textNode.textContent = message;
+
+  toast.appendChild(dot);
+  toast.appendChild(textNode);
   toastContainer.appendChild(toast);
 
   setTimeout(() => {
@@ -615,5 +662,10 @@ function showToast(message, type = 'info') {
 }
 
 function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  if (typeof str !== 'string') return String(str);
+  return str.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
 }
