@@ -55,6 +55,8 @@
           <li><a href="#about">// ABOUT</a></li>
           <li><a href="#skills">// SKILLS</a></li>
           <li><a href="#projects">// PROJECTS</a></li>
+          <li><a href="#neural-sandbox">// NEURAL_LAB</a></li>
+          <li><a href="#voice-emulator">// VOICE_AI</a></li>
           <li><a href="#terminal">// CLI</a></li>
           <li><a href="#timeline">// TIMELINE</a></li>
           <li><a href="#contact">// CONTACT</a></li>
@@ -115,17 +117,17 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#skills" class="btn btn-primary">
+          <a href="#neural-sandbox" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-            Explore Skills Matrix
+            Live Neural Sandbox
           </a>
-          <a href="#projects" class="btn btn-outline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-            Selected Works
+          <a href="#voice-emulator" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            MONOPOLY Voice AI
           </a>
-          <a href="#terminal" class="btn btn-outline">
+          <a href="#skills" class="btn btn-outline">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
-            CLI Simulator
+            Skills Matrix
           </a>
         </div>
 
@@ -235,11 +237,110 @@
     </div>
   </section>
 
-  <!-- Skills Matrix Hub Section (Resume Grounded) -->
+  <!-- Interactive Neural Sandbox Section -->
+  <section id="neural-sandbox" class="neural-sandbox-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 01 // INTERACTIVE DEEP LEARNING LAB ]</div>
+        <h2 class="section-title">NEURALMATRIX // LIVE INFERENCE SANDBOX</h2>
+        <p class="section-subtitle">
+          Real-time in-browser forward propagation simulator. Stimulate input neurons, select activation tensors, and watch real-time synapse signals calculate live.
+        </p>
+      </div>
+
+      <div class="neural-sandbox-card hud-panel" data-tilt>
+        <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
+
+        <div class="neural-canvas-wrapper">
+          <canvas id="neural-canvas"></canvas>
+        </div>
+
+        <div class="neural-controls-bar">
+          <div class="d-flex align-items-center gap-3">
+            <span class="mono-tag text-cyan">Activation Tensor:</span>
+            <select id="neural-act-select" class="neural-select">
+              <option value="relu">ReLU (Rectified Linear Unit)</option>
+              <option value="gelu">GELU (Gaussian Error)</option>
+              <option value="sigmoid">Sigmoid</option>
+              <option value="tanh">Hyperbolic Tangent (Tanh)</option>
+            </select>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <button id="neural-stimulate-btn" class="btn btn-sm btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Inject Signal Pulse
+            </button>
+            <span class="mono-tag text-dim">⚡ Click any node to fire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONOPOLY Voice AI Live Emulator Section -->
+  <section id="voice-emulator" class="voice-emulator-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-hud-badge">[ 02 // VOICE &amp; VISION AI EMULATOR ]</div>
+        <h2 class="section-title">MONOPOLY ASSISTANT // LIVE INTENT HUB</h2>
+        <p class="section-subtitle">
+          Test-drive Aryan's flagship Windows Voice Assistant engine. Select a preset intent or type custom instructions to simulate screen routing and speech synthesis.
+        </p>
+      </div>
+
+      <div class="voice-emulator-hub hud-panel" id="voice-emulator-hub">
+        <div class="hud-corner-tl"></div><div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div><div class="hud-corner-br"></div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div id="monopoly-status-tag" class="mono-tag text-cyan">
+            <span class="pulse-dot"></span> MONOPOLY ENGINE: READY (Hotkey: Ctrl+Shift+M)
+          </div>
+          <span class="badge badge-lime">Edge-TTS Neural</span>
+        </div>
+
+        <div class="waveform-equalizer" id="monopoly-waveform">
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        </div>
+
+        <div class="voice-presets-flex">
+          <button class="voice-cmd-pill" data-cmd="Analyze screen error & inspect code">🎙️ "Analyze screen error &amp; inspect code"</button>
+          <button class="voice-cmd-pill" data-cmd="Trigger PyTorch model training loop">🎙️ "Trigger PyTorch model training loop"</button>
+          <button class="voice-cmd-pill" data-cmd="Execute system memory optimization">🎙️ "Execute system memory optimization"</button>
+          <button class="voice-cmd-pill" data-cmd="Schedule interview call with Aryan">🎙️ "Schedule interview call with Aryan"</button>
+          <button class="voice-cmd-pill" data-cmd="Play ambient focus music stream">🎙️ "Play ambient focus music stream"</button>
+        </div>
+
+        <div class="voice-emulator-grid">
+          <div class="intent-telemetry-box">
+            <div class="mono-tag text-cyan mb-2">// INTENT ROUTING TELEMETRY</div>
+            <div><strong>Parsed Intent:</strong> <span id="monopoly-intent-display" class="text-violet">WAITING_FOR_TRIGGER</span></div>
+            <div class="mt-2"><strong>System Action:</strong> <span id="monopoly-action-display" class="text-sub">Standing by for voice stimulus...</span></div>
+          </div>
+
+          <div class="intent-telemetry-box">
+            <div class="mono-tag text-cyan mb-2">// SPEECH SYNTHESIS (EDGE-TTS)</div>
+            <div><strong>Voice Audio Output:</strong></div>
+            <p id="monopoly-voice-output" class="text-sub mt-1">"MONOPOLY voice core is online and listening on Windows subsystem."</p>
+          </div>
+        </div>
+
+        <form id="monopoly-input-form" class="ai-input-wrapper mt-3">
+          <input type="text" id="monopoly-cmd-input" class="ai-input-box" placeholder="Type a custom voice command (e.g. 'Optimize memory', 'Train neural net', 'Hire Aryan')...">
+          <button type="submit" class="btn btn-sm btn-primary">Dispatch Intent</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Matrix Hub Section -->
   <section id="skills" class="skills-section">
     <div class="container">
       <div class="section-header center">
-        <div class="section-hud-badge">[ 01 // TECHNICAL MATRIX ]</div>
+        <div class="section-hud-badge">[ 03 // TECHNICAL MATRIX ]</div>
         <h2 class="section-title">SKILLS &amp; PROFICIENCIES</h2>
         <p class="section-subtitle">
           Interactive catalog of technical competencies across Artificial Intelligence, Full-Stack web development, Core CS, and Design systems.
@@ -269,7 +370,7 @@
   <section id="projects" class="projects-section">
     <div class="container">
       <div class="section-header center">
-        <div class="section-hud-badge">[ 02 // SELECTED WORKS ]</div>
+        <div class="section-hud-badge">[ 04 // SELECTED WORKS ]</div>
         <h2 class="section-title">FEATURED SYSTEMS &amp; PROJECTS</h2>
         <p class="section-subtitle">
           Production systems, voice AI assistants, deep learning pipelines, and modern web platforms engineered by Aryan Saxena.
@@ -293,7 +394,7 @@
   <section id="terminal" class="terminal-section">
     <div class="container">
       <div class="section-header center">
-        <div class="section-hud-badge">[ 03 // DEVELOPER CLI SIMULATOR ]</div>
+        <div class="section-hud-badge">[ 05 // DEVELOPER CLI SIMULATOR ]</div>
         <h2 class="section-title">INTERACTIVE TERMINAL (ARYAN_OS)</h2>
         <p class="section-subtitle">
           Execute terminal commands directly in the virtual shell below to inspect skills, academic credentials, and project architectures.
@@ -338,7 +439,7 @@
   <section id="timeline" class="timeline-section">
     <div class="container">
       <div class="section-header center">
-        <div class="section-hud-badge">[ 04 // ACADEMIC &amp; MILESTONE LOG ]</div>
+        <div class="section-hud-badge">[ 06 // ACADEMIC &amp; MILESTONE LOG ]</div>
         <h2 class="section-title">EDUCATION &amp; JOURNEY</h2>
         <p class="section-subtitle">
           Academic foundations at Dr. A.P.J. Abdul Kalam Institute of Technology (UTU), deep learning achievements, and software engineering experience.
@@ -363,7 +464,7 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="section-header center">
-        <div class="section-hud-badge">[ 05 // CONNECT &amp; COLLABORATE ]</div>
+        <div class="section-hud-badge">[ 07 // CONNECT &amp; COLLABORATE ]</div>
         <h2 class="section-title">LET'S BUILD SOMETHING EXTRAORDINARY</h2>
         <p class="section-subtitle">
           Open for full-time engineering roles, AI research collaborations, and innovative product developments.
@@ -488,6 +589,8 @@
   <script src="js/security.js"></script>
   <script src="js/data.js"></script>
   <script src="js/audio.js"></script>
+  <script src="js/neural-sandbox.js"></script>
+  <script src="js/voice-emulator.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/terminal.js"></script>
   <script src="js/ai-assistant.js"></script>
