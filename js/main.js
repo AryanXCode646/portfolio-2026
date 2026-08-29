@@ -63,8 +63,10 @@ function initCustomCursor() {
 }
 
 /* --------------------------------------------------
-   Theme Management (Dark / Light)
+   Theme Management (Multiple Pro Themes)
 -------------------------------------------------- */
+const THEMES = ['dark', 'light', 'dracula', 'monokai', 'matrix'];
+
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const savedTheme = localStorage.getItem('aryan_portfolio_theme') || 'dark';
@@ -81,7 +83,11 @@ function initTheme() {
 
 window.toggleTheme = function() {
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  let currentIndex = THEMES.indexOf(currentTheme);
+  if (currentIndex === -1) currentIndex = 0;
+  
+  const newTheme = THEMES[(currentIndex + 1) % THEMES.length];
+  
   document.documentElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('aryan_portfolio_theme', newTheme);
   updateThemeIcon(newTheme);
@@ -92,7 +98,7 @@ window.toggleTheme = function() {
   if (window.soundFX) {
     window.soundFX.playChime(600, 900);
   }
-  showToast(`Switched theme mode to: ${newTheme.toUpperCase()}`);
+  showToast(`Theme changed to: ${newTheme.toUpperCase()}`);
   return newTheme;
 };
 
@@ -100,9 +106,16 @@ function updateThemeIcon(theme) {
   const icon = document.getElementById('theme-icon');
   if (!icon) return;
   if (theme === 'light') {
-    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
-  } else {
     icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+  } else if (theme === 'matrix') {
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>`;
+  } else if (theme === 'dracula') {
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>`;
+  } else if (theme === 'monokai') {
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>`;
+  } else {
+    // dark theme (default moon)
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
   }
 }
 
@@ -732,4 +745,6 @@ function escapeHtml(str) {
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
 }
+
+
 

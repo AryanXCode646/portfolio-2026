@@ -2268,3 +2268,90 @@ a {
 .mono-tag, .badge {
   font-weight: 500 !important;
 }
+/* ==========================================================================
+   ADDITIONAL PRO THEMES
+   ========================================================================== */
+
+[data-theme="dracula"] {
+  --bg-deep: #282a36;
+  --bg-surface: #383a59;
+  --bg-card: #44475a;
+  --bg-card-hover: #6272a4;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(189, 147, 249, 0.3);
+  --border-active: #bd93f9;
+
+  --text-main: #f8f8f2;
+  --text-sub: #bd93f9;
+  --text-dim: #6272a4;
+
+  --neon-cyan: #8be9fd;
+  --neon-cyan-glow: rgba(139, 233, 253, 0.2);
+  --neon-violet: #bd93f9;
+  --neon-violet-glow: rgba(189, 147, 249, 0.2);
+  --neon-lime: #50fa7b;
+  --neon-emerald: #50fa7b;
+
+  --grad-hyper: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%);
+  --grad-cyber: linear-gradient(135deg, #8be9fd, #ff79c6);
+  --grad-dark: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
+
+  --nav-bg: rgba(40, 42, 54, 0.8);
+  --modal-bg: rgba(40, 42, 54, 0.95);
+}
+
+[data-theme="monokai"] {
+  --bg-deep: #272822;
+  --bg-surface: #3e3d32;
+  --bg-card: #3e3d32;
+  --bg-card-hover: #49483e;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(166, 226, 46, 0.3);
+  --border-active: #a6e22e;
+
+  --text-main: #f8f8f2;
+  --text-sub: #f92672;
+  --text-dim: #75715e;
+
+  --neon-cyan: #66d9ef;
+  --neon-cyan-glow: rgba(102, 217, 239, 0.2);
+  --neon-violet: #ae81ff;
+  --neon-violet-glow: rgba(174, 129, 255, 0.2);
+  --neon-lime: #a6e22e;
+  --neon-emerald: #a6e22e;
+
+  --grad-hyper: linear-gradient(135deg, #fd971f 0%, #f92672 100%);
+  --grad-cyber: linear-gradient(135deg, #a6e22e, #66d9ef);
+  --grad-dark: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
+
+  --nav-bg: rgba(39, 40, 34, 0.8);
+  --modal-bg: rgba(39, 40, 34, 0.95);
+}
+
+[data-theme="matrix"] {
+  --bg-deep: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-card: #051405;
+  --bg-card-hover: #0a260a;
+  --border-subtle: rgba(0, 255, 0, 0.1);
+  --border-glow: rgba(0, 255, 0, 0.3);
+  --border-active: #00ff00;
+
+  --text-main: #00ff00;
+  --text-sub: #00cc00;
+  --text-dim: #005500;
+
+  --neon-cyan: #00ff00;
+  --neon-cyan-glow: rgba(0, 255, 0, 0.2);
+  --neon-violet: #00cc00;
+  --neon-violet-glow: rgba(0, 204, 0, 0.2);
+  --neon-lime: #00ff00;
+  --neon-emerald: #00ff00;
+
+  --grad-hyper: linear-gradient(135deg, #00ff00 0%, #005500 100%);
+  --grad-cyber: linear-gradient(135deg, #00ff00, #00cc00);
+  --grad-dark: linear-gradient(180deg, rgba(0, 255, 0, 0.05) 0%, rgba(0,0,0,0) 100%);
+
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --modal-bg: rgba(0, 0, 0, 0.95);
+}
