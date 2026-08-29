@@ -8,70 +8,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@700;800;900&display=swap');
 
 :root {
-  /* Dark Cinematic Theme (Default) */
-  --bg-deep: #030712;
-  --bg-surface: #070d1d;
-  --bg-card: rgba(11, 19, 38, 0.72);
-  --bg-card-hover: rgba(18, 30, 58, 0.9);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(0, 240, 255, 0.35);
-  --border-active: #00f0ff;
+  /* Vercel/Linear Pro Engineer Theme */
+  --bg-deep: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-card: #111111;
+  --bg-card-hover: #161616;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(255, 255, 255, 0.15);
+  --border-active: #ffffff;
 
-  --text-main: #f8fafc;
-  --text-sub: #94a3b8;
-  --text-dim: #64748b;
+  --text-main: #ededed;
+  --text-sub: #a1a1aa;
+  --text-dim: #71717a;
 
-  --neon-cyan: #00f0ff;
-  --neon-cyan-glow: rgba(0, 240, 255, 0.45);
-  --neon-violet: #a855f7;
-  --neon-violet-glow: rgba(168, 85, 247, 0.4);
-  --neon-lime: #a3e635;
+  --neon-cyan: #3b82f6;
+  --neon-cyan-glow: rgba(59, 130, 246, 0.2);
+  --neon-violet: #8b5cf6;
+  --neon-violet-glow: rgba(139, 92, 246, 0.2);
+  --neon-lime: #10b981;
   --neon-emerald: #10b981;
 
-  --grad-hyper: linear-gradient(135deg, #00f0ff 0%, #a855f7 50%, #ec4899 100%);
-  --grad-cyber: linear-gradient(90deg, #00f0ff, #3b82f6, #a855f7);
-  --grad-dark: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --grad-hyper: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  --grad-cyber: linear-gradient(135deg, #ffffff, #a1a1aa);
+  --grad-dark: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 
-  --nav-bg: rgba(3, 7, 18, 0.88);
-  --modal-bg: rgba(5, 10, 24, 0.95);
+  --nav-bg: rgba(0, 0, 0, 0.7);
+  --modal-bg: rgba(10, 10, 10, 0.95);
 
-  --shadow-hud: 0 0 35px rgba(0, 240, 255, 0.15);
-  --shadow-card: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
+  --shadow-hud: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.5);
 
-  --font-display: 'Syne', 'Space Grotesk', sans-serif;
+  --font-display: 'Inter', -apple-system, sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
 [data-theme="light"] {
-  --bg-deep: #f8fafc;
-  --bg-surface: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.88);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(8, 145, 178, 0.4);
-  --border-active: #0891b2;
+  --bg-deep: #ffffff;
+  --bg-surface: #fafafa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-glow: rgba(0, 0, 0, 0.15);
+  --border-active: #000000;
 
-  --text-main: #090e17;
-  --text-sub: #334155;
-  --text-dim: #64748b;
+  --text-main: #09090b;
+  --text-sub: #52525b;
+  --text-dim: #a1a1aa;
 
-  --neon-cyan: #0891b2;
-  --neon-cyan-glow: rgba(8, 145, 178, 0.25);
+  --neon-cyan: #2563eb;
+  --neon-cyan-glow: rgba(37, 99, 235, 0.1);
   --neon-violet: #7c3aed;
-  --neon-violet-glow: rgba(124, 58, 237, 0.25);
-  --neon-lime: #65a30d;
+  --neon-violet-glow: rgba(124, 58, 237, 0.1);
+  --neon-lime: #059669;
   --neon-emerald: #059669;
 
-  --grad-hyper: linear-gradient(135deg, #0891b2 0%, #7c3aed 50%, #db2777 100%);
-  --grad-cyber: linear-gradient(90deg, #0891b2, #2563eb, #7c3aed);
-  --grad-dark: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%);
+  --grad-hyper: linear-gradient(135deg, #000000 0%, #52525b 100%);
+  --grad-cyber: linear-gradient(135deg, #000000, #52525b);
+  --grad-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
 
-  --nav-bg: rgba(248, 250, 252, 0.92);
+  --nav-bg: rgba(255, 255, 255, 0.8);
   --modal-bg: rgba(255, 255, 255, 0.98);
 
-  --shadow-hud: 0 0 25px rgba(8, 145, 178, 0.15);
-  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-hud: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Base Styles */
@@ -2200,4 +2200,71 @@ a {
     width: auto;
     bottom: 5rem;
   }
+}
+
+
+/* ==========================================================================
+   PRO CODER AESTHETIC OVERRIDES (VERCEL/LINEAR STYLE)
+   ========================================================================== */
+
+/* 1. Hide playful HUD corners */
+.hud-corner-tl, .hud-corner-tr, .hud-corner-bl, .hud-corner-br {
+  display: none !important;
+}
+
+/* 2. Sleek Custom Cursor */
+.custom-cursor-outline {
+  display: none !important;
+}
+.custom-cursor-dot {
+  background-color: var(--text-main) !important;
+  box-shadow: none !important;
+  width: 5px !important;
+  height: 5px !important;
+  mix-blend-mode: difference;
+}
+
+/* 3. Subtle Cyber Grid */
+.cyber-grid-overlay {
+  opacity: 0.15 !important;
+}
+
+/* 4. Elegant Buttons (No heavy glow) */
+.btn-primary {
+  box-shadow: none !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--bg-deep) !important;
+  font-weight: 600 !important;
+}
+.btn-primary:hover {
+  background: var(--text-main) !important;
+  color: var(--bg-deep) !important;
+  transform: none !important;
+}
+
+/* 5. Minimal Typography Fixes */
+.hero-main-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.05em !important;
+}
+.section-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* 6. Clean Card Borders */
+.hud-panel {
+  border-radius: 8px !important;
+}
+
+/* 7. Tags and Badges */
+.section-hud-badge {
+  border-radius: 9999px !important;
+  background: transparent !important;
+  color: var(--text-sub) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+.mono-tag, .badge {
+  font-weight: 500 !important;
 }
